@@ -13,7 +13,7 @@
         {% block body %}
             {% for post in posts %}
                 <h1>
-                    <a href="{% url 'blog:post_detail' post.id %}">
+                    <a href="{{post.get_absolute_url}}">
                         {{post.title}}
                     </a>
                 </h1>
@@ -23,6 +23,7 @@
                     Description: {{post.body|truncatechars:30|linebreaks}}
                 </p>
             {% endfor %}
+            {% include "blog/pagination.html" with page=posts %}
         {% endblock  %}
         <script src="" async defer></script>
     </body>

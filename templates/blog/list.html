@@ -1,0 +1,29 @@
+{% extends 'base.html' %}{% load static %}{% load i18n %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}Blog Page{% endblock  %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        {% block body %}
+            {% for post in posts %}
+                <h1>
+                    <a href="{% url 'blog:post_detail' post.id %}">
+                        {{post.title}}
+                    </a>
+                </h1>
+                <hr>
+                <p>
+                    Published: {{post.publish}} by {{post.author}}<br>
+                    Description: {{post.body|truncatechars:30|linebreaks}}
+                </p>
+            {% endfor %}
+        {% endblock  %}
+        <script src="" async defer></script>
+    </body>
+</html>

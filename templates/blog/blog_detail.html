@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>{% block title %}{{ post.title }} {{post.id}} {% endblock %}</title>
+        <title>{% block title %}Blog {{post.id}} {% endblock %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
@@ -14,11 +14,6 @@
             <h1>{{post.title}}</h1>
             <p>{{post.publish}} by {{post.author}}</p>
             <p>{{post.body|linebreaks}}</p>
-            <p>
-                <a href="{% url "blog:post_share" post.id %}">
-                    Share this post
-                </a>
-            </p>
         {% endblock  %}
         <script src="" async defer></script>
     </body>

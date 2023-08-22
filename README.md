@@ -8,3 +8,7 @@
     Second: We made pagination:
 
 <img src="pagination.jpg" alt="home made">
+
+    Email Sender:
+
+<img src="email_sender.jpg" alt="home made">
